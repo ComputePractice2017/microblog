@@ -1,0 +1,16 @@
+FROM golang
+
+#ADD microblog-server /go/src/github.com/ComputePractice2017/microblog-server
+
+RUN go get "github.com/gorilla/handlers"
+RUN go get "github.com/gorilla/mux"
+RUN go get "gopkg.in/gorethink/gorethink.v3"
+
+ADD microblog-server /go/src/github.com/practice/microblog-server
+RUN go install github.com/practice/microblog-server
+
+ENTRYPOINT /go/bin/microblog-server
+
+ENV RETHINKDB_HOST db
+
+EXPOSE 8000

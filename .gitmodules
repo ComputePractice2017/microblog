@@ -1,0 +1,6 @@
+[submodule "microblog-web"]
+	path = microblog-web
+	url = https://github.com/ComputePractice2017/microblog-web.git
+[submodule "microblog-server"]
+	path = microblog-server
+	url = https://github.com/ComputePractice2017/microblog-server.git

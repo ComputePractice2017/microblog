@@ -23,20 +23,10 @@ services:
       - "8000"
     restart: always
 
-  web:
-    build: 
-      context: .
-      dockerfile: Dockerfile.web
-    ports: 
-      - "80"
-    restart: always
-
   gateway:
     depends_on:
-     - web
      - server
     links:
-     - web
      - server
     build:
       context: .
